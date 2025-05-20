@@ -1,0 +1,18 @@
+CREATE USER IF NOT EXISTS 'user'@'%' IDENTIFIED BY 'sstipassword';
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'%' WITH GRANT OPTION;
+
+
+CREATE DATABASE IF NOT EXISTS webtask;
+
+USE webtask;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id VARCHAR(255) NOT NULL UNIQUE,
+    username VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
+INSERT INTO users (username, user_id, password)
+VALUES ('admin', 'd7b5f323-d7f2-456b-8e75-a6874063620e', 'pbkdf2:sha256:600000$BByAT7q1py1wwt8r$384eac24f649026e14c969af14c7e3f482d669f9737cae9c4983b5bab46841b2')
+ON DUPLICATE KEY UPDATE username=username;

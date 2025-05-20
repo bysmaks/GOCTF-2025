@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Processing Result</h1>
+    <div class="success">Image processed successfully!</div>
+    <h3>Output:</h3>
+    <div class="result-box">{{ result }}</div>
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="{{ url_for('upload_file') }}" class="btn">Process Another Image</a>
+    </div>
+{% endblock %}

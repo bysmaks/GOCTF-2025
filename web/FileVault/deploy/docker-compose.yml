@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  nextjs-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3002:3002"
+    environment:
+      - NODE_ENV=production
+      - FLAG=goctf{n3xt_m1ddl3w4r3_byp4ss_4nd_syml1nk_fun}
+    restart: unless-stopped 

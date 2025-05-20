@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Змейка</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      background: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    canvas {
+      border: 1px solid white;
+      margin-top: 10px;
+    }
+
+    #countField {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+    }
+
+    #flagField {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="countField" style="color: white;"></h1>
+  <canvas id="game" width="400" height="400"></canvas>
+  <div id="flagField" style="margin-top: 10px; font-weight: bold;"></div>
+  <script>
+    const _0x4d25df = _0x2390; (function (_0x4d1374, _0x3405b0) { const _0xad731b = _0x2390, _0x35ee48 = _0x4d1374(); while (!![]) { try { const _0x5c2b8f = parseInt(_0xad731b(0x87)) / 0x1 + parseInt(_0xad731b(0x8a)) / 0x2 + -parseInt(_0xad731b(0x8b)) / 0x3 * (parseInt(_0xad731b(0x99)) / 0x4) + parseInt(_0xad731b(0x9d)) / 0x5 * (parseInt(_0xad731b(0xb3)) / 0x6) + parseInt(_0xad731b(0xb6)) / 0x7 * (parseInt(_0xad731b(0xa0)) / 0x8) + -parseInt(_0xad731b(0xb5)) / 0x9 * (parseInt(_0xad731b(0x8e)) / 0xa) + parseInt(_0xad731b(0xa1)) / 0xb * (-parseInt(_0xad731b(0x95)) / 0xc); if (_0x5c2b8f === _0x3405b0) break; else _0x35ee48['push'](_0x35ee48['shift']()); } catch (_0x29cab3) { _0x35ee48['push'](_0x35ee48['shift']()); } } }(_0x5269, 0x35dd1)); function _0x2390(_0x236da7, _0x428079) { const _0x5269ce = _0x5269(); return _0x2390 = function (_0x2390c5, _0x12f1e2) { _0x2390c5 = _0x2390c5 - 0x82; let _0x49011f = _0x5269ce[_0x2390c5]; return _0x49011f; }, _0x2390(_0x236da7, _0x428079); } function _0x5269() { const _0x39b37b = ['random', 'now', 'json', '4512OVioFJ', 'height', '81FYzxhG', '1186430LglAPu', 'fillStyle', 'innerHTML', 'innerText', 'cells', 'encode', 'from', 'flag', 'toString', 'width', 'stringify', 'red', 'segments', '336201otqDQF', 'subtle', 'addEventListener', '835582ctynUX', '352611uGGnfG', 'SHA-256', 'getContext', '122390hNBKLQ', 'Счёт:\x20', 'keydown', 'number', 'super_secret_key', 'which', 'flagField', '22644iLcWzR', 'clearRect', 'getElementById', 'raw', '4pJDBas', 'warn', 'map', '🐍\x20Snake\x20is\x20not\x20legit.', '40pqALcd', 'importKey', 'unshift', '8Jcjhta', '2805PwhjPU', 'maxCells', 'floor', 'join', '/get_flag', 'length', 'game', 'forEach', 'HMAC', 'sign', 'green', 'pop', 'object', 'countField', 'fillRect']; _0x5269 = function () { return _0x39b37b; }; return _0x5269(); } var canvas = document[_0x4d25df(0x97)](_0x4d25df(0xa7)), context = canvas[_0x4d25df(0x8d)]('2d'), grid = 0x10, count = 0x0, snake = { 'x': 0xa0, 'y': 0xa0, 'dx': grid, 'dy': 0x0, 'cells': [], 'maxCells': 0x4, 'segments': [] }, apple = { 'x': 0x140, 'y': 0x140 }; function getRandomInt(_0x44ba03, _0x448b0b) { const _0x41b906 = _0x4d25df; return Math[_0x41b906(0xa3)](Math[_0x41b906(0xb0)]() * (_0x448b0b - _0x44ba03)) + _0x44ba03; } function isSnakeLegit(_0x2ee8d8) { const _0x130be8 = _0x4d25df; if (!Array['isArray'](_0x2ee8d8)) return ![]; if (_0x2ee8d8[_0x130be8(0xa6)] !== 0x3e8) return ![]; for (let _0x49ba7c of _0x2ee8d8) { if (typeof _0x49ba7c !== _0x130be8(0xad) || typeof _0x49ba7c['x'] !== _0x130be8(0x91) || typeof _0x49ba7c['y'] !== _0x130be8(0x91)) return ![]; } return !![]; } async function validateSnakeAndRequestFlag() { const _0x2974e0 = _0x4d25df; if (!isSnakeLegit(snake[_0x2974e0(0x86)])) { console[_0x2974e0(0x9a)](_0x2974e0(0x9c)); return; } const _0x2d1a71 = Math[_0x2974e0(0xa3)](Date[_0x2974e0(0xb1)]() / 0x3e8), _0x826ce6 = 0x3e8 + ':' + _0x2d1a71, _0x581d2a = new TextEncoder(), _0x45e9cf = await crypto[_0x2974e0(0x88)][_0x2974e0(0x9e)](_0x2974e0(0x98), _0x581d2a[_0x2974e0(0xbb)](_0x2974e0(0x92)), { 'name': _0x2974e0(0xa9), 'hash': _0x2974e0(0x8c) }, ![], ['sign']), _0x241409 = await crypto[_0x2974e0(0x88)][_0x2974e0(0xaa)]('HMAC', _0x45e9cf, _0x581d2a[_0x2974e0(0xbb)](_0x826ce6)), _0x5d7c67 = Array[_0x2974e0(0xbc)](new Uint8Array(_0x241409))[_0x2974e0(0x9b)](_0x54de56 => _0x54de56[_0x2974e0(0x82)](0x10)['padStart'](0x2, '0'))[_0x2974e0(0xa4)](''), _0x56a817 = await fetch(_0x2974e0(0xa5), { 'method': 'POST', 'headers': { 'Content-Type': 'application/json' }, 'body': JSON[_0x2974e0(0x84)]({ 'score': 0x3e8, 'timestamp': _0x2d1a71, 'token': _0x5d7c67 }) }), _0x9fb3a4 = await _0x56a817[_0x2974e0(0xb2)](); _0x9fb3a4[_0x2974e0(0xbd)] && (document[_0x2974e0(0x97)](_0x2974e0(0x94))[_0x2974e0(0xb9)] = _0x9fb3a4['flag']); } function loop() { const _0x1d8a30 = _0x4d25df; requestAnimationFrame(loop); if (++count < 0x4) return; count = 0x0, document[_0x1d8a30(0x97)](_0x1d8a30(0xae))[_0x1d8a30(0xb8)] = _0x1d8a30(0x8f) + snake[_0x1d8a30(0xba)][_0x1d8a30(0xa6)], context[_0x1d8a30(0x96)](0x0, 0x0, canvas['width'], canvas['height']), snake['x'] += snake['dx'], snake['y'] += snake['dy']; if (snake['x'] < 0x0) snake['x'] = canvas[_0x1d8a30(0x83)] - grid; else { if (snake['x'] >= canvas['width']) snake['x'] = 0x0; } if (snake['y'] < 0x0) snake['y'] = canvas[_0x1d8a30(0xb4)] - grid; else { if (snake['y'] >= canvas['height']) snake['y'] = 0x0; } snake[_0x1d8a30(0xba)][_0x1d8a30(0x9f)]({ 'x': snake['x'], 'y': snake['y'] }), snake[_0x1d8a30(0x86)] = snake[_0x1d8a30(0xba)], snake[_0x1d8a30(0xba)][_0x1d8a30(0xa6)] > snake['maxCells'] && snake[_0x1d8a30(0xba)][_0x1d8a30(0xac)](), context[_0x1d8a30(0xb7)] = _0x1d8a30(0x85), context[_0x1d8a30(0xaf)](apple['x'], apple['y'], grid - 0x1, grid - 0x1), context[_0x1d8a30(0xb7)] = _0x1d8a30(0xab), snake[_0x1d8a30(0xba)][_0x1d8a30(0xa8)](function (_0x45029e, _0x57b8c1) { const _0x2ce1e2 = _0x1d8a30; context[_0x2ce1e2(0xaf)](_0x45029e['x'], _0x45029e['y'], grid - 0x1, grid - 0x1); _0x45029e['x'] === apple['x'] && _0x45029e['y'] === apple['y'] && (snake['maxCells']++, apple['x'] = getRandomInt(0x0, 0x19) * grid, apple['y'] = getRandomInt(0x0, 0x19) * grid, snake[_0x2ce1e2(0xba)][_0x2ce1e2(0xa6)] === 0x3e8 && validateSnakeAndRequestFlag()); for (var _0x34fee4 = _0x57b8c1 + 0x1; _0x34fee4 < snake[_0x2ce1e2(0xba)]['length']; _0x34fee4++) { _0x45029e['x'] === snake[_0x2ce1e2(0xba)][_0x34fee4]['x'] && _0x45029e['y'] === snake[_0x2ce1e2(0xba)][_0x34fee4]['y'] && (snake['x'] = 0xa0, snake['y'] = 0xa0, snake[_0x2ce1e2(0xba)] = [], snake[_0x2ce1e2(0xa2)] = 0x4, snake['dx'] = grid, snake['dy'] = 0x0, apple['x'] = getRandomInt(0x0, 0x19) * grid, apple['y'] = getRandomInt(0x0, 0x19) * grid, document[_0x2ce1e2(0x97)](_0x2ce1e2(0x94))[_0x2ce1e2(0xb9)] = ''); } }); } document[_0x4d25df(0x89)](_0x4d25df(0x90), function (_0x5745ae) { const _0x1e3a0d = _0x4d25df; if (_0x5745ae[_0x1e3a0d(0x93)] === 0x25 && snake['dx'] === 0x0) snake['dx'] = -grid, snake['dy'] = 0x0; else { if (_0x5745ae['which'] === 0x26 && snake['dy'] === 0x0) snake['dy'] = -grid, snake['dx'] = 0x0; else { if (_0x5745ae[_0x1e3a0d(0x93)] === 0x27 && snake['dx'] === 0x0) snake['dx'] = grid, snake['dy'] = 0x0; else _0x5745ae[_0x1e3a0d(0x93)] === 0x28 && snake['dy'] === 0x0 && (snake['dy'] = grid, snake['dx'] = 0x0); } } }), requestAnimationFrame(loop);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Вход{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="/static/css/login.css">
+<div class="login-container">
+        <div class="login-box">
+            <h2>Вход</h2>
+            {% if get_flashed_messages()  %}
+            {% for error in get_flashed_messages() %}
+            <p>{{error}}</p>
+            {% endfor %}
+            {% endif %}
+            <form method="post" action="/login">
+                <div class="textbox">
+                    <input type="text" placeholder="Имя пользователя" name="username" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" placeholder="Пароль" name="password" required>
+                </div>
+                <button type="submit" class="btn">Войти</button>
+                <button type="button" class="btn-register" onclick="window.location = '/signup'">Регистрация</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

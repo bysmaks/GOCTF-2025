@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Very secure messenger{% endblock %}
+
+
+{% block body %}
+
+    <link rel="stylesheet" href="/static/css/messenger.css">
+
+
+    <div class="messenger">
+        <div class="chat-list">
+            <br>
+            <input id="search-input" class="search-input" placeholder="Поиск">
+            <div class="search-results" id="search-results">
+            </div>
+            <ul id="chat-list">
+                <li class="chat-item" data-chat-id="1">ChAt wItH fLaG</li>
+
+            </ul>
+        </div>
+        <div class="chat-window">
+            <div id="messages" class="messages">
+
+            </div>
+            <form id="message-form" style="display: none;">
+                <input type="text" id="message-input" placeholder="Введите сообщение" required>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+    <script src="/static/js/messenger.js"></script>
+{% endblock %}

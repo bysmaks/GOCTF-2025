@@ -1,0 +1,41 @@
+version: '3.8'
+services:
+  goctfbot:
+    build: .
+    container_name: goctfbot
+    restart: unless-stopped
+    # volumes:
+    #   - .:/app
+    environment:
+      - TZ=Europe/Moscow
+
+# Как запустить:
+# 1. Перейдите в папку d:\ctf\tasks\goctf2025 (cd d:\ctf\tasks\goctf2025)
+# 2. Выполните команду:
+#    docker-compose up --build
+# 3. Бот автоматически соберёт бинарники и запустится внутри контейнера.
+# 4. Для остановки используйте:
+#    docker-compose down
+
+# ВАЖНО: 
+# Если ошибка 'ContainerConfig' сохраняется, попробуйте:
+# 1. Полностью удалить все остановленные контейнеры и старые образы:
+#    docker-compose down --rmi all --volumes --remove-orphans
+# 2. Убедитесь, что у вас нет лишних volume/volumes секций в docker-compose.yml.
+# 3. Проверьте версию docker-compose (желательно >= 1.25).
+# 4. Если используете Docker Desktop на Windows, убедитесь, что проект находится в доступной для Docker папке.
+# 5. Если ошибка не исчезает, попробуйте переименовать проект/папку или пересоздать docker-compose.yml с нуля.
+# 6. Перезапустите Docker и повторите запуск:
+#    docker-compose up --build
+
+# Если ошибка 'ContainerConfig' возникает даже после всех советов:
+# - Это баг старых версий docker-compose (особенно на Windows).
+# - Убедитесь, что вы используете docker-compose версии 1.29+ или Docker Compose V2 (docker compose ...).
+# - Попробуйте полностью удалить все старые контейнеры и образы:
+#     docker-compose down --rmi all --volumes --remove-orphans
+# - Затем пересоберите:
+#     docker-compose build --no-cache
+#     docker-compose up
+# - Если не помогает, попробуйте вместо docker-compose использовать новую команду:
+#     docker compose up --build
+# - Если не помогает — пересоздайте проект в новой папке с минимальным docker-compose.yml и Dockerfile.

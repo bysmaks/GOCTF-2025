@@ -1,0 +1,1 @@
+GOCTF{crypt0_3moj1_evi1}

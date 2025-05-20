@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Welcome to PNG analyzer</h1>
+    <p>Upload a PNG image to process it with our special png files analyzer.</p>
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="{{ url_for('upload_file') }}" class="btn">Upload Image</a>
+    </div>
+{% endblock %}

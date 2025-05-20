@@ -1,0 +1,1 @@
+GOCTF{vecr01nt_puzl3}

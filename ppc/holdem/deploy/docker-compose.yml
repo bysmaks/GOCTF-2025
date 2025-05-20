@@ -1,0 +1,9 @@
+services:
+  ppc-holdem:
+    build: .
+    environment:
+      - FLAG=goctf{holdem_holdem_i_wanna_be_a_gundam_bb7a}
+      - LEVELS=1000
+    ports:
+      - "10315:8080"
+    restart: always

@@ -1,0 +1,10 @@
+services:
+  ppc-signal:
+    build: .
+    environment:
+      - FLAG=goctf{bin4ry_class1f1cat1on_jus7_us3_1m4g1n4t10n}
+      - LEVELS=1000
+      - TIMEOUT=1m
+    ports:
+      - "10506:8080"
+    restart: always

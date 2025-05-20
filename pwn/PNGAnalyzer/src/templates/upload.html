@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Upload PNG Image</h1>
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% endif %}
+    <form class="upload-form" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".png" required>
+        <button type="submit" class="btn">Upload and Process</button>
+    </form>
+    <p style="text-align: center; margin-top: 20px;">
+        <small>Maximum file size: 64KB</small>
+    </p>
+{% endblock %}
